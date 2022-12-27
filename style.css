@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+.top{
+    margin: 10px;
+    font-size: medium;
+    color: lightgray;
+}
+
+
+.footer{
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    font-size: smaller;
+    color: gray;
+}
+
+.footer a{
+    color: gray;
+}
+
+.joe{
+    margin: 15px;
+    color: gray;
+}
