@@ -10,16 +10,26 @@
     color: lightgray;
 }
 
+.circ{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+    background-color: gray;
+}
+.nazev{
+    color: gray;
+}
 
-.footer{
-    position: absolute;
-    top: 50%;
-    right: 50%;
+.foot{
+    text-align: center;
     font-size: smaller;
     color: gray;
 }
 
-.footer a{
+.foot a{
     color: gray;
 }
 
