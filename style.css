@@ -10,30 +10,62 @@
     color: lightgray;
 }
 
-.circ{
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 100px auto;
+}
+
+.hex_color{
+    margin: 10px;
+    margin-bottom: 25px;
+    color: #666;
+}
+
+.color{
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
+    flex-direction: row;
+}
+.circ{
     height: 75px;
     width: 75px;
     border-radius: 50%;
-    background-color: gray;
+    background-color: #666;
+    margin: 10px;
 }
 .nazev{
-    color: gray;
+    color: #666;
+    margin: 10px;
+    margin-bottom: 100px;
+}
+
+.dif{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    color: #666;
+    margin: 10px;
+}
+.dif a{
+    margin-left: 5px;
+    text-decoration: none;
+    color: #666;
 }
 
 .foot{
     text-align: center;
     font-size: smaller;
-    color: gray;
+    color: #666;
 }
 
 .foot a{
-    color: gray;
+    color: #666;
 }
 
 .joe{
     margin: 15px;
-    color: gray;
+    color: #666;
 }
