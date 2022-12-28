@@ -36,6 +36,12 @@
     background-color: #666;
     margin: 10px;
 }
+ul{
+    list-style: none;
+}
+li{
+    float: left;
+}
 .nazev{
     color: #666;
     margin: 10px;
