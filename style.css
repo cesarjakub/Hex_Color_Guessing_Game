@@ -43,14 +43,14 @@
     margin-bottom: 100px;
 }
 
-.dif{
+.difficulty{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     color: #666;
     margin: 10px;
 }
-.dif a{
+.difficulty a{
     margin-left: 5px;
     text-decoration: none;
     color: #666;
