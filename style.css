@@ -40,7 +40,7 @@
 .nazev{
     color: #666;
     margin: 10px;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 
 .difficulty{
@@ -69,4 +69,23 @@
 .joe{
     margin: 15px;
     color: #666;
+}
+
+.win{
+    text-align: center;
+    margin: 10px;
+    color: #666;
+}
+
+.restart{
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    color: white;
+    padding: 15px 20px;
+    margin: 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+    cursor: pointer;
 }

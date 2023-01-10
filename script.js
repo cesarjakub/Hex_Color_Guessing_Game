@@ -1,30 +1,40 @@
 let hexColor = document.querySelector('.hex');
 let circleColor = document.querySelector('.color');
-
-const difftwo = document.querySelector('.diff2');
-const diffthree = document.querySelector('.diff3');
-const difffour = document.querySelector('.diff4');
+let circle = document.querySelectorAll('.circ');
+let obtiznost = 2;
 
 function correctHexColor(){
     let randomHex = Math.floor(Math.random()*16777215).toString(16).toUpperCase();
-    let randomColor = "#"+randomHex;
-    hexColor.innerHTML = randomColor;
-    return randomColor;
+    let randomCorrectColor = "#"+randomHex;
+    return randomCorrectColor;
 }
-correctHexColor();
-
-function diff(pocet){
-    const d = document.createElement('div');
-    d.className = "circ";
-    for(let i = 0; i < pocet; i++){
-        circleColor.appendChild(d);
-    }
+function setHexText(){
+    hexColor.innerHTML = correctHexColor();
 }
-difftwo.addEventListener("click", diff(2));
-diffthree.addEventListener("click", diff(4));
-difffour.addEventListener("click", diff(5));
+setHexText();
 
 
-function randomCircleColor(){
+function setCorrectColor(){
+    let div = document.createElement('div');
+    div.className = "circ";
+    div.style.backgroundColor = correctHexColor();
+    //div.addEventListener("click", chechIfCorrect());
+    circleColor.appendChild(div);
+    return div;
+}
+setCorrectColor();
 
+function setOtherColors(){
+    let joe = "#"+Math.floor(Math.random()*16777215).toString(16).toUpperCase();
+    let div = document.createElement('div');
+    div.className = "circ";
+    div.style.backgroundColor = joe;
+    //div.addEventListener("click", chechIfCorrect());
+    circleColor.appendChild(div);
+    return div;
+}
+setOtherColors();
+
+function chechIfCorrect(){
+    
 }
