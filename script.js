@@ -49,7 +49,7 @@ function setCorrectColor(){
     div.className = "circ";
     div.id = randomCorrectColor;
     div.style.backgroundColor = randomCorrectColor;
-    div.addEventListener("click", function(){ chechIfCorrect(randomCorrectColor) });
+    div.addEventListener("click", function(){ checkIfCorrect(randomCorrectColor) });
     circleColor.appendChild(div);
     return div;
 }
@@ -62,7 +62,7 @@ function setOtherColors(){
     div.id = randomOtherColor;
     div.style.backgroundColor = randomOtherColor;
     div.addEventListener("click", function(){ 
-        chechIfCorrect(randomOtherColor) 
+        checkIfCorrect(randomOtherColor) 
         div.remove();
     });
     circleColor.appendChild(div);
@@ -70,7 +70,7 @@ function setOtherColors(){
 }
 
 
-function chechIfCorrect(generatedColor){
+function checkIfCorrect(generatedColor){
     if(randomCorrectColor === generatedColor){
         winText.innerHTML = "YOU WON!!!";
         let wrongColors = document.querySelectorAll('.wrong');
