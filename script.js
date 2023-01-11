@@ -7,7 +7,6 @@ let randomCorrectColor;
 
 const restart = document.querySelector('.restart');
 
-StartGame();
 
 function setDifficulty(ob){
     circleColor.innerHTML = "";
@@ -45,31 +44,37 @@ function setHexText(){
     hexColor.innerHTML = randomCorrectColor;
 }
 
-
 function setCorrectColor(){
     let div = document.createElement('div');
     div.className = "circ";
+    div.id = randomCorrectColor;
     div.style.backgroundColor = randomCorrectColor;
+    div.addEventListener("click", function(){ chechIfCorrect(randomCorrectColor) });
     circleColor.appendChild(div);
     return div;
 }
-setCorrectColor().addEventListener("click", chechIfCorrect);
 
 function setOtherColors(){
     let joe = "#"+Math.floor(Math.random()*16777215).toString(16);
     let div = document.createElement('div');
     div.className = "circ";
+    div.id = joe;
     div.style.backgroundColor = joe;
     circleColor.appendChild(div);
+    div.addEventListener("click", function(){ 
+        chechIfCorrect(joe) 
+        div.remove();
+    });
     return div;
 }
-setOtherColors().addEventListener("click", chechIfCorrect);
 
-function chechIfCorrect(){
-    if(randomCorrectColor === 3){
+
+function chechIfCorrect(generatedColor){
+    if(randomCorrectColor === generatedColor){
         winText.innerHTML = "YOU WON!!!";
     }else{
         winText.innerHTML = "WRONG!!!";
+
     }
 }
 
@@ -80,9 +85,11 @@ function StartGame(){
 }
 
 function reset(){
-    circleColor.innerHTML = "";
     obtiznost = 2;
+    circleColor.innerHTML = "";
     winText.innerHTML = "";
     StartGame();
 }
-restart.addEventListener("click", reset);
+restart.addEventListener("click", function(){ reset() });
+
+StartGame();
