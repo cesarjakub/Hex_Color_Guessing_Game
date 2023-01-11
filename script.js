@@ -8,15 +8,15 @@ let randomCorrectColor;
 const restart = document.querySelector('.restart');
 
 
-function setDifficulty(ob){
+function setDifficulty(difficulty){
     circleColor.innerHTML = "";
-        if(ob === 2){
+        if(difficulty === 2){
         obtiznost = 2
         StartGame();
-    }else if(ob === 3){
+    }else if(difficulty === 3){
         obtiznost = 3;
         StartGame();
-    }else if(ob === 4){
+    }else if(difficulty === 4){
         obtiznost = 4;    
         StartGame();
     }
@@ -55,16 +55,17 @@ function setCorrectColor(){
 }
 
 function setOtherColors(){
-    let joe = "#"+Math.floor(Math.random()*16777215).toString(16);
+    let randomOtherColor = "#"+Math.floor(Math.random()*16777215).toString(16);
     let div = document.createElement('div');
     div.className = "circ";
-    div.id = joe;
-    div.style.backgroundColor = joe;
-    circleColor.appendChild(div);
+    div.classList.add("wrong");
+    div.id = randomOtherColor;
+    div.style.backgroundColor = randomOtherColor;
     div.addEventListener("click", function(){ 
-        chechIfCorrect(joe) 
+        chechIfCorrect(randomOtherColor) 
         div.remove();
     });
+    circleColor.appendChild(div);
     return div;
 }
 
@@ -72,9 +73,12 @@ function setOtherColors(){
 function chechIfCorrect(generatedColor){
     if(randomCorrectColor === generatedColor){
         winText.innerHTML = "YOU WON!!!";
+        let wrongColors = document.querySelectorAll('.wrong');
+        wrongColors.forEach(element => {
+            element.remove();
+        });
     }else{
         winText.innerHTML = "WRONG!!!";
-
     }
 }
 
